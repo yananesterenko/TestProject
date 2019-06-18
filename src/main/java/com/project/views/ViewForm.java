@@ -28,17 +28,7 @@ public class ViewForm {
         JTextField textNetPath = new JTextField(pathNet, 25);
         textNetPath.setForeground(Color.GRAY);
 
-        JButton chooseFileFolderButton = new JButton("Choose file or folder");
-        chooseFileFolderButton.addActionListener(e1 -> {
-                    JFileChooser fileChooser = new JFileChooser();
-                    fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                    int ret = fileChooser.showDialog(null, "Open file");
-                    File direct = fileChooser.getCurrentDirectory();
 
-                    textLocalPath.setText(fileChooser.getCurrentDirectory().toString());
-                }
-
-        );
 
         JButton saveButton = new JButton("Save information about product:");
         saveButton.addActionListener(e -> {
