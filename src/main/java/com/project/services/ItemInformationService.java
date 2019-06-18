@@ -10,39 +10,29 @@ import java.io.IOException;
 
 public class ItemInformationService {
 
-    private String netPath;
-    //  private final Document doc;
 
-
-    public ItemInformationService(String netPath) {
-
-        this.netPath = netPath;
-    }
-
-    public ItemInformation getItemInformation() {
+    public static ItemInformation getItemInformation(String netPath) {
         ItemInformation itemObject = new ItemInformation();
-        Document doc = getDocument();
+        Document doc = getDocument(netPath);
         Elements itemElements = doc.getElementsByClass("x-product-info");
         for (Element itemElement : itemElements) {
             Elements itemContent = itemElement.getElementsByClass("x-product-info__content");
             for (Element element : itemContent) {
                 itemObject.setName(getName(element));
-               // itemObject.setImageURL(getImageURL(doc));
+
                 itemObject.setPrice(getPrice(doc));
             }
             Elements itemImages = itemElement.getElementsByClass("x-product-info__images");
             for (Element element : itemImages) {
-                itemObject.setImageURL(getImageURL(element));
+                itemObject.setImageURL(getImageURL(doc));
             }
 
         }
 
-
         return itemObject;
-
     }
 
-    private String getPrice(Document doc) {
+    private static String getPrice(Document doc) {
         String price = "";
         Elements priceElement = doc.getElementsByClass("x-product-price__value");
         for (Element element : priceElement) {
@@ -54,13 +44,13 @@ public class ItemInformationService {
     }
 
 
-    private String getName(Element element) {
-        String name ;
+    private static  String getName(Element element) {
+        String name;
         name = element.getElementsByTag("h1").text();
         return name;
     }
 
-    private Document getDocument() {
+    public static Document getDocument(String netPath) {
         Document doc = null;
         try {
             doc = Jsoup.connect(netPath).get();
@@ -72,9 +62,14 @@ public class ItemInformationService {
     }
 
 
-    private static String getImageURL(Element element) {
-        String imageURL;
-        imageURL = element.getElementsByClass("magnifier__image--2qkjO").attr("src");
+    private static String getImageURL(Document doc) {
+        String imageURL = null;
+        //meta"og:image"
+
+        Elements element = doc.select("meta[property=og:image]");
+        if (element != null) {
+            imageURL = element.attr("content");
+        }
         return imageURL;
     }
 }

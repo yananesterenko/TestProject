@@ -35,16 +35,16 @@ public class ViewForm {
                     int ret = fileChooser.showDialog(null, "Open file");
                     File direct = fileChooser.getCurrentDirectory();
 
-                   textLocalPath.setText(fileChooser.getCurrentDirectory().toString());
+                    textLocalPath.setText(fileChooser.getCurrentDirectory().toString());
                 }
 
         );
 
         JButton saveButton = new JButton("Save information about product:");
         saveButton.addActionListener(e -> {
-                    ItemInformationService itemInformationServ = new ItemInformationService(textNetPath.getText());
-                    ItemInformation itemInformationObject = itemInformationServ.getItemInformation();
-                    FillXMLFileService.fillingFileXML(new File(System.getProperty("user.dir")+"/data", "item.xml" ), itemInformationObject);
+
+                    ItemInformation itemInformationObject = ItemInformationService.getItemInformation(pathNet);
+                    FillXMLFileService.fillingFileXML(new File(System.getProperty("user.dir") + "/data", "item.xml"), itemInformationObject);
                 }
         );
 
