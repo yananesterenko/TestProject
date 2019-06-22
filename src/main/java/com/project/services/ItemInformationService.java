@@ -38,9 +38,7 @@ public class ItemInformationService {
         for (Element element : priceElement) {
             price = element.attr("data-qaprice");
         }
-
         return price;
-
     }
 
 
@@ -65,7 +63,6 @@ public class ItemInformationService {
     private static String getImageURL(Document doc) {
         String imageURL = null;
         //meta"og:image"
-
         Elements element = doc.select("meta[property=og:image]");
         if (element != null) {
             imageURL = element.attr("content");
