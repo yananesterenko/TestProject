@@ -1,10 +1,8 @@
-package promlogin.services;
+package com.promlogin.services;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-import promlogin.utils.WebDriverUtil;
-
-import java.util.concurrent.TimeUnit;
+import com.promlogin.utils.WebDriverUtil;
 
 public class CreatePromLogin {
 

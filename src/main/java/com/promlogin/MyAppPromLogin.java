@@ -1,6 +1,6 @@
-package promlogin;
+package com.promlogin;
 
-import promlogin.services.CreatePromLogin;
+import com.promlogin.services.CreatePromLogin;
 
 public class MyAppPromLogin {
     public static void main(String[] args) {
