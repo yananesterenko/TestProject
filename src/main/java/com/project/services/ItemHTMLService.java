@@ -1,6 +1,6 @@
 package com.project.services;
 
-import com.project.models.ItemInformation;
+import com.project.models.Item;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -8,11 +8,11 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-public class ItemInformationService {
+public class ItemHTMLService {
 
 
-    public static ItemInformation getItemInformation(String netPath) {
-        ItemInformation itemObject = new ItemInformation();
+    public static Item getItemInformation(String netPath) {
+        Item itemObject = new Item();
         Document doc = getDocument(netPath);
         Elements itemElements = doc.getElementsByClass("x-product-info");
         for (Element itemElement : itemElements) {
@@ -26,9 +26,7 @@ public class ItemInformationService {
             for (Element element : itemImages) {
                 itemObject.setImageURL(getImageURL(doc));
             }
-
         }
-
         return itemObject;
     }
 

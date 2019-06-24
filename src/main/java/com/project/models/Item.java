@@ -1,7 +1,7 @@
 package com.project.models;
 
 
-public class ItemInformation {
+public class Item {
 
     private String name;
     private String price;

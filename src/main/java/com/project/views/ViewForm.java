@@ -1,9 +1,9 @@
 package com.project.views;
 
 
-import com.project.models.ItemInformation;
+import com.project.models.Item;
 import com.project.services.FillXMLFileService;
-import com.project.services.ItemInformationService;
+import com.project.services.ItemHTMLService;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,7 +33,7 @@ public class ViewForm {
         JButton saveButton = new JButton("Save information about product:");
         saveButton.addActionListener(e -> {
 
-                    ItemInformation itemInformationObject = ItemInformationService.getItemInformation(pathNet);
+                    Item itemInformationObject = ItemHTMLService.getItemInformation(pathNet);
                     FillXMLFileService.fillingFileXML(new File(System.getProperty("user.dir") + "/data", "item.xml"), itemInformationObject);
                 }
         );

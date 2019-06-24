@@ -1,7 +1,7 @@
 package com.project.services;
 
 
-import com.project.models.ItemInformation;
+import com.project.models.Item;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -17,7 +17,7 @@ import java.io.File;
 
 public class FillXMLFileService {
 
-     public static void fillingFileXML(File file, ItemInformation itemObject) {
+     public static void fillingFileXML(File file, Item itemObject) {
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();

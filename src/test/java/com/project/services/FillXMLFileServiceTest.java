@@ -1,9 +1,8 @@
 package com.project.services;
 
-import com.project.models.ItemInformation;
+import com.project.models.Item;
 import org.junit.jupiter.api.Test;
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -17,7 +16,7 @@ class FillXMLFileServiceTest {
         String name = "PC";
         String price = "2000.00";
         String imageURL = "https://images/1.jpg";
-        ItemInformation itemObject = new ItemInformation();
+        Item itemObject = new Item();
         itemObject.setName(name);
         itemObject.setPrice(price);
         itemObject.setImageURL(imageURL);
