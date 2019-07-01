@@ -11,12 +11,12 @@ class ItemHTMLServiceTest {
 
     void getItemInformation() {
 
-        Item item = ItemHTMLService.getItemInformation("https://prom.ua/p895411456-igrovoj-noutbu-omen.html");
+        Item item = ItemHTMLService.getHTMLItemInformation("https://prom.ua/p895411456-igrovoj-noutbu-omen.html");
         assertNotNull(item);
         assertNotNull(item.getName());
         assertNotNull(item.getImageURL());
         assertNotNull(item.getPrice());
-        assertFalse(item.getPrice().contains("[a-zA-Z]+"));
+        //assertFalse(item.getPrice().contains("[a-zA-Z]+"));
 
     }
 
