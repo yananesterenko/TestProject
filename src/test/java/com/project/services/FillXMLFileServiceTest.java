@@ -21,7 +21,7 @@ class FillXMLFileServiceTest {
         itemObject.setPrice(price);
         itemObject.setImageURL(imageURL);
         File filename = new File("temp.xml");
-        FillXMLFileService.fillingFileXML(filename, itemObject);
+        FillXMLFileService.fillingXMLFile(filename, itemObject);
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = null;
         try {

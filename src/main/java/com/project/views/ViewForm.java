@@ -1,13 +1,10 @@
 package com.project.views;
 
 
-import com.project.models.Item;
-import com.project.services.FillXMLFileService;
-import com.project.services.ItemHTMLService;
+import com.project.services.CollectItemInformation;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 
 
 public class ViewForm {
@@ -29,12 +26,9 @@ public class ViewForm {
         textNetPath.setForeground(Color.GRAY);
 
 
-
         JButton saveButton = new JButton("Save information about product:");
         saveButton.addActionListener(e -> {
-
-                    Item itemInformationObject = ItemHTMLService.getItemInformation(pathNet);
-                    FillXMLFileService.fillingFileXML(new File(System.getProperty("user.dir") + "/data", "item.xml"), itemInformationObject);
+                    CollectItemInformation.getItemInformation(pathNet);
                 }
         );
 

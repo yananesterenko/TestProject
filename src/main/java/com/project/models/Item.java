@@ -1,8 +1,10 @@
 package com.project.models;
 
 
-public class Item {
+import java.security.PublicKey;
 
+public class Item {
+    private String id;
     private String name;
     private String price;
     private String imageURL;

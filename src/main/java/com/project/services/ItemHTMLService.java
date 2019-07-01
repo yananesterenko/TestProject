@@ -13,6 +13,7 @@ public class ItemHTMLService {
 
     public static Item getItemInformation(String netPath) {
         Item itemObject = new Item();
+
         Document doc = getDocument(netPath);
         Elements itemElements = doc.getElementsByClass("x-product-info");
         for (Element itemElement : itemElements) {

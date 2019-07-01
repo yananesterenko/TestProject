@@ -14,10 +14,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.util.logging.Logger;
 
 public class FillXMLFileService {
-
-     public static void fillingFileXML(File file, Item itemObject) {
+     public static  Logger logger = Logger.getLogger("");
+     public static void fillingXMLFile(File file, Item itemObject) {
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -44,7 +45,7 @@ public class FillXMLFileService {
             StreamResult result = new StreamResult(file);
             transformer.transform(source, result);
 
-            System.out.println("Done");
+            logger.info("File xml is done.");
 
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();

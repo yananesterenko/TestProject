@@ -1,14 +1,15 @@
-package com.promlogin.services;
+package com.project.services;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-import com.promlogin.utils.WebDriverUtil;
+import com.project.utils.WebDriverUtil;
 
-public class CreatePromLogin {
+public class PromLoginService {
 
     public static void createLogin(String name, String email, String password) {
-
-        ChromeDriver driver = WebDriverUtil.getChromeDriver("https://prom.ua/join-customer?source_id=txt.register.customer");
+        String webDriverName = "webdriver.chrome.driver";
+        String driverEx = "chromedriver.exe";
+        ChromeDriver driver = WebDriverUtil.getWebDriver("https://prom.ua/join-customer?source_id=txt.register.customer" , webDriverName, driverEx);
         WebDriverUtil.setTimeOutSec(driver,  10);
         setLoginFields(driver, name, email, password);
         WebDriverUtil.setTimeOutSec(driver, 50);

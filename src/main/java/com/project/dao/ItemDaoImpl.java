@@ -4,6 +4,7 @@ import com.project.models.Item;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -19,13 +20,13 @@ public class ItemDaoImpl implements ItemDao{
     }
 
     @Override
-    public void addItem(Item item) {
+    public  void addItem(Item item) {
         Session session = this.sessionFactory.getCurrentSession();
         session.persist(item);
         logger.info("Item " +item + " was added");
     }
 
-    @Override
+
     public void updateItem(Item item) {
         Session session = this.sessionFactory.getCurrentSession();
         session.update(item);

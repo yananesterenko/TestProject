@@ -1,4 +1,4 @@
-package com.promlogin.utils;
+package com.project.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,8 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 public class WebDriverUtil {
 
-    public static ChromeDriver getChromeDriver(String path) {
-        System.setProperty("webdriver.chrome.driver",  System.getProperty("user.dir") + "\\webdrivers\\"+  "chromedriver.exe");
+    public static ChromeDriver getWebDriver(String path, String webDriverLib, String driverEx) {
+        System.setProperty(webDriverLib,  System.getProperty("user.dir") + "\\webdrivers\\"+  driverEx);
         ChromeDriver driver = new ChromeDriver();
         driver.get(path);
 

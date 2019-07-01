@@ -50,6 +50,8 @@
           <artifactId>postgresql</artifactId>
           <version>9.1-901-1.jdbc4</version>
       </dependency>
+
+
       <dependency>
           <groupId>org.junit.platform</groupId>
           <artifactId>junit-platform-commons</artifactId>
@@ -60,8 +62,9 @@
       <dependency>
           <groupId>org.hibernate</groupId>
           <artifactId>hibernate-core</artifactId>
-          <version>5.4.2.Final</version>
+          <version>5.4.1.Final</version>
       </dependency>
+
 
   </dependencies>
 
