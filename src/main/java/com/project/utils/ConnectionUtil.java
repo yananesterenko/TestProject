@@ -27,7 +27,8 @@ public class ConnectionUtil {
 
         } catch (SQLException e) {
             logger.info("Connection Failed");
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.info("Check if port and Database name are correct.");
             return connection;
         }
         if (connection != null) {

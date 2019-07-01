@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ItemHTMLService {
 
 
-    public static Item getItemInformation(String netPath) {
+    public static Item getHTMLItemInformation(String netPath) {
         Item itemObject = new Item();
 
         Document doc = getDocument(netPath);
@@ -31,11 +31,11 @@ public class ItemHTMLService {
         return itemObject;
     }
 
-    private static String getPrice(Document doc) {
-        String price = "";
+    private static double getPrice(Document doc) {
+        double price =0;
         Elements priceElement = doc.getElementsByClass("x-product-price__value");
         for (Element element : priceElement) {
-            price = element.attr("data-qaprice");
+            price = Double.valueOf(element.attr("data-qaprice"));
         }
         return price;
     }

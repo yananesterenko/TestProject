@@ -16,7 +16,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.util.logging.Logger;
 
-public class FillXMLFileService {
+public class WriteXMLFileService {
      public static  Logger logger = Logger.getLogger("");
      public static void fillingXMLFile(File file, Item itemObject) {
         try {
@@ -32,7 +32,7 @@ public class FillXMLFileService {
             itemName.appendChild(doc.createTextNode(itemObject.getName()));
             item.appendChild(itemName);
             Element price = doc.createElement("price");
-            price.appendChild(doc.createTextNode(itemObject.getPrice()));
+            price.appendChild(doc.createTextNode(itemObject.getPriceStr()));
             item.appendChild(price);
             Element imageURL = doc.createElement("imageURL");
             imageURL.appendChild(doc.createTextNode(itemObject.getImageURL()));
@@ -44,7 +44,6 @@ public class FillXMLFileService {
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(file);
             transformer.transform(source, result);
-
             logger.info("File xml is done.");
 
         } catch (ParserConfigurationException pce) {
