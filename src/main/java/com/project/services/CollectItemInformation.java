@@ -15,17 +15,20 @@ public class CollectItemInformation {
        Item itemInformationObject = ItemHTMLService.getItemInformation(pathNet);
        File itemsfile = new File(System.getProperty("user.dir") + "/data", "item.xml");
        FillXMLFileService.fillingXMLFile(itemsfile, itemInformationObject);
-       Connection conn = ItemDaoService.getConnection();
+       Connection connection = ItemDaoService.getConnection();
 
-       Statement st = null;
+       Statement statement = null;
        try {
-           st = conn.createStatement();
+           statement = connection.createStatement();
            String qs = "CREATE TABLE IF NOT EXISTS item(user_id SERIAL NOT NULL PRIMARY KEY,itemName varchar(225) NOT NULL UNIQUE,price integer,ImageURL varchar(225))";
            String qs1 = "SELECT * FROM item";
-           ResultSet rs = st.executeQuery(qs);
+           ResultSet rs = statement.executeQuery(qs1);
+           statement.close();
        } catch (SQLException e) {
            e.printStackTrace();
        }
+
+
 
 
    }
