@@ -3,17 +3,14 @@ package com.project.services;
 import com.project.models.Item;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.IOException;
 
 public class ReadXMLFileService {
 
-    public static Item readItemToObject(File filename){
+    public static Item readItemToObject(File filename) {
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = null;
         Item item = new Item();
@@ -24,7 +21,7 @@ public class ReadXMLFileService {
             String itemName = doc.getDocumentElement().getElementsByTagName("itemName").item(0).getFirstChild().getTextContent();
             item.setName(itemName);
             String priceStr = doc.getDocumentElement().getElementsByTagName("price").item(0).getFirstChild().getTextContent();
-            double  price = Double.valueOf(priceStr);
+            double price = Double.valueOf(priceStr);
             item.setPrice(price);
             String imageURL = doc.getDocumentElement().getElementsByTagName("imageURL").item(0).getFirstChild().getTextContent();
             item.setImageURL(imageURL);

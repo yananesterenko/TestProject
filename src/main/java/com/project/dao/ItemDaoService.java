@@ -1,4 +1,4 @@
-package com.project.services;
+package com.project.dao;
 
 
 import com.project.models.Item;
@@ -12,7 +12,7 @@ import java.util.List;
 public class ItemDaoService {
 
     public static Connection getConnection(){
-         Connection connection = ConnectionUtil.getConnection("org.postgresql.Driver", "jdbc:postgresql://127.0.0.1:5432/myapp_data","postgres","postgres");
+         Connection connection = new ConnectionPostgress().getConnection();
          return connection;
     }
 

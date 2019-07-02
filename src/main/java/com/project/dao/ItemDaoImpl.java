@@ -13,18 +13,17 @@ import java.util.List;
 import java.util.logging.Logger;
 
 
-public class ItemDaoImpl implements ItemDao {
+public class ItemDaoImpl {
 
     private static final Logger logger = Logger.getLogger(ItemDaoImpl.class.getName());
 
+    private ConnectionDao connectionDao = new ConnectionPostgress();
 
-    @Override
     public void addItem(Item item, Connection connection) {
         String sql = "INSERT INTO items (user_id,itemname, price, imageurl) VALUES (?, ?, ?, ?)";
         try {
             connection.setAutoCommit(false);
             PreparedStatement stm  =connection.prepareStatement(sql);
-            stm.setInt(1, 4);
             stm.setString(2, item.getName());
             stm.setDouble(3, item.getPrice());
             stm.setString(4, item.getImageURL());
@@ -42,17 +41,15 @@ public class ItemDaoImpl implements ItemDao {
         logger.info("Item " + item + " was changed");
     }
 
-    @Override
+
     public void deleteItem(int id) {
     }
 
-    @Override
     public Item getItemById(int id) {
         return null;
     }
 
-    @Override
-    public List<Item> listItems() {
+   public List<Item> listItems() {
         List<Item> itemList = new ArrayList<>();
         return itemList;
     }
