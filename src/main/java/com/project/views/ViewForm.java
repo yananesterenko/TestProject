@@ -1,7 +1,7 @@
 package com.project.views;
 
 
-import com.project.services.CollectItemInformation;
+import com.project.services.impl.ItemServiceImpl;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,13 +25,25 @@ public class ViewForm {
         textNetPath.setForeground(Color.GRAY);
         JButton saveButtonToFile = new JButton("Save information about product into file");
         saveButtonToFile.addActionListener(e -> {
-                    CollectItemInformation.getItemInformation(pathNet);
+            ItemServiceImpl.getItemInformation(pathNet);
                 }
         );
-        JButton saveButtonToDB = new JButton("Save information into DB");
+        JButton saveButtonToDB = new JButton("Save ");
         saveButtonToDB.addActionListener(e -> {
-            CollectItemInformation.saveItemInformation();
+            ItemServiceImpl.addItemInformation();
         });
+
+
+        JButton updateButtonToDB = new JButton("Update");
+        saveButtonToDB.addActionListener(e -> {
+            ItemServiceImpl.addItemInformation();
+        });
+
+        JButton deleteButtonToDB = new JButton("Delete");
+        saveButtonToDB.addActionListener(e -> {
+            ItemServiceImpl.addItemInformation();
+        });
+
         panel.add(labelNetPath, new
                 GridBagConstraints(0, 0, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
@@ -55,10 +67,22 @@ public class ViewForm {
                 GridBagConstraints.HORIZONTAL,
                 new Insets(1, 2, 3, 4), 0, 0));
         panel.add(saveButtonToDB, new
-                GridBagConstraints(1, 3, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints(2, 3, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
                 new Insets(1, 2, 3, 4), 0, 0));
-        //  panel.add(textArea);
+        panel.add(updateButtonToDB, new
+                GridBagConstraints(2, 4, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints.HORIZONTAL,
+                new Insets(1, 2, 3, 4), 0, 0));
+
+        panel.add(deleteButtonToDB, new
+                GridBagConstraints(2, 5, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints.HORIZONTAL,
+                new Insets(1, 2, 3, 4), 0, 0));        //  panel.add(textArea);
+        panel.add(deleteButtonToDB, new
+                GridBagConstraints(2, 5, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints.HORIZONTAL,
+                new Insets(1, 2, 3, 4), 0, 0));
         frame.add(panel);
         frame.setVisible(true);
     }

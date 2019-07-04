@@ -13,6 +13,7 @@ public class ConnectionPostgress implements ConnectionDao {
     private static final String USER = "postgress";
     private static final String PASS = "postgres";
 
+
     public Connection getConnection() {
         Connection connection = null;
         Logger logger = MyLogger.getLogger();

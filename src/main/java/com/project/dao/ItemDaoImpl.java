@@ -1,9 +1,6 @@
 package com.project.dao;
 
 import com.project.models.Item;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,13 +17,13 @@ public class ItemDaoImpl {
     private ConnectionDao connectionDao = new ConnectionPostgress();
 
     public void addItem(Item item, Connection connection) {
-        String sql = "INSERT INTO items (user_id,itemname, price, imageurl) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO items (itemname, price, imageurl) VALUES (?, ?, ?)";
         try {
             connection.setAutoCommit(false);
-            PreparedStatement stm  =connection.prepareStatement(sql);
-            stm.setString(2, item.getName());
-            stm.setDouble(3, item.getPrice());
-            stm.setString(4, item.getImageURL());
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, item.getName());
+            stm.setDouble(2, item.getPrice());
+            stm.setString(3, item.getImageURL());
             stm.executeUpdate();
             connection.commit();
             logger.info("Item " + item.getName() + " was added");
@@ -38,7 +35,9 @@ public class ItemDaoImpl {
 
 
     public void updateItem(Item item) {
-        logger.info("Item " + item + " was changed");
+        String sql = "UPDATE  items SET itemname = " + item.getName() + "," +
+                " price = " + item.getPrice() + ", imageurl = " + item.getImageURL() +" where itemname = 123 " ;
+      logger.info("Item " + item + " was changed");
     }
 
 
@@ -49,7 +48,7 @@ public class ItemDaoImpl {
         return null;
     }
 
-   public List<Item> listItems() {
+    public List<Item> listItems() {
         List<Item> itemList = new ArrayList<>();
         return itemList;
     }
