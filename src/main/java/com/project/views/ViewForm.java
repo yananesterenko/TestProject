@@ -14,7 +14,7 @@ public class ViewForm {
         JFrame frame = new JFrame();
         frame.setTitle("Save picture from Google page");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(new Dimension(700, 300));
+        frame.setSize(new Dimension(800, 400));
         frame.setLocation(100, 100);
         Panel panel = new Panel(new GridBagLayout());
         frame.setLayout(new GridBagLayout());
@@ -93,7 +93,7 @@ public class ViewForm {
                 GridBagConstraints.HORIZONTAL,
                 new Insets(1, 2, 3, 4), 0, 0));
         panel.add(updateButtonToDB, new
-                GridBagConstraints(5, 4, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints(10, 4, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
                 new Insets(1, 2, 3, 4), 0, 0));
 
