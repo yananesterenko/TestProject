@@ -62,49 +62,54 @@ public class ViewForm {
             ItemServiceImpl.addItemInformation();
         });
 
+        GridBagConstraints cb =new GridBagConstraints(0, 0, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints.HORIZONTAL,
+                new Insets(0, 0, 0, 0), 0, 0);
         panel.add(labelNetPath, new
                 GridBagConstraints(0, 0, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
-                new Insets(1, 2, 3, 4), 0, 0));
+                new Insets(0, 0, 0, 0), 0, 0));
         panel.add(textNetPath, new
-                GridBagConstraints(1, 0, 40, 1, 50.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints(1, 0, 40, 1, 0.0, 0.9, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
-                new Insets(1, 2, 3, 4), 0, 0));
+                new Insets(0, 0, 0, 0), 0, 0));
         panel.add(labelLocalPath, new
                 GridBagConstraints(0, 1, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
-                new Insets(1, 2, 3, 4), 0, 0));
-        panel.add(textLocalPath, new GridBagConstraints(1, 1, 40, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                new Insets(0, 0, 0, 0), 0, 0));
+        panel.add(textLocalPath, new
+                GridBagConstraints(1, 1, 10, 1, 0.0, 0.9, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
-                new Insets(1, 2, 3, 4), 0, 0));
+                new Insets(0, 0, 0, 0), 0, 0));
       /*  panel.add(chooseFileFolderButton, new GridBagConstraints(2, 1, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
                 new Insets(1, 2, 3, 4), 0, 0));*/
         panel.add(saveButtonToFile, new
-                GridBagConstraints(7, 1, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints(2, 2, 1, 1, 0.0, 0.0, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
-                new Insets(1, 2, 3, 4), 0, 0));
+                new Insets(0, 0, 0, 0), 0, 0));
         panel.add(scrollPane, new
-                GridBagConstraints(1, 2, 40, 4, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints(1, 3, 4, 4, 0.0, 0.0, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
                 new Insets(1, 2, 3, 4), 0, 0));
         panel.add(saveButtonToDB, new
-                GridBagConstraints(5, 3, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints(1, 5, 1, 1, 0.0, 0.0, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
-                new Insets(1, 2, 3, 4), 0, 0));
+                new Insets(0, 0, 0, 0), 0, 0));
         panel.add(updateButtonToDB, new
-                GridBagConstraints(10, 4, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints(2, 5, 1, 1, 0.0, 0.0, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
-                new Insets(1, 2, 3, 4), 0, 0));
+                new Insets(0, 0, 0, 0), 0, 0));
 
-        panel.add(deleteButtonToDB, new
-                GridBagConstraints(5, 5, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+
+   /*     panel.add(deleteButtonToDB, new
+                GridBagConstraints(3, 5, 1, 1, 0.0, 0.0, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
                 new Insets(1, 2, 3, 4), 0, 0));        //  panel.add(textArea);
         panel.add(selectButtonToDB, new
-                GridBagConstraints(5, 6, 1, 1, 0.0, 0.9, GridBagConstraints.NORTH,
+                GridBagConstraints(4, 5, 1, 1, 0.0, 0.0, GridBagConstraints.NORTH,
                 GridBagConstraints.HORIZONTAL,
-                new Insets(1, 2, 3, 4), 0, 0));
+                new Insets(1, 2, 3, 4), 0, 0));*/
         frame.add(panel);
         frame.setVisible(true);
     }
